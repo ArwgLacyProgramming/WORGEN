@@ -1,0 +1,31 @@
+'WORGEN' is a program that will help you with your personal and random wordlist preparation.
+
+ If you want,
+you can start using the program directly with the '-u' command.
+After typing this command, you will  have two options:
+
+1. By selecting the letter (l) option, you can process the letters that you want among themselves.
+
+(NOTE: if your alphabet is different, or if you don't want to permutate all uppercase letters and all lowercase letters, etc.,
+or if you have special letters to include in the process, answer all questions as 'No' (N)
+after selecting the letter option, Do you want to add anything? 'to the question' Yes' (Y),
+you can manually enter your own characters or special letters and permutate it.)
+(In case you prefer this path, be careful, you do not need to type a space between letters or write any characters. Correct example is: abcd258.,! -)
+
+2. After selecting the option words (w), you can set the maximum and minimum combinations as you wish, after entering 1-30 keywords about the victim, you can start the permutation progress.
+
+(NOTE: You do not need to enter random numbers in the keywords section. Just say yes to the question
+'Would you like to add a random number?'
+(Note:In case you want to enter less than 30 words, you can press enter and pass the blank word questions.
+The blank words and duplicates will be deleted.)
+
+
+
+If you want to process more than 30 words, write as many keywords as you want in a text file.
+Then, you can continue the operation after typing '-w' and entering it you must write the filename with the type of the file.Then enter the maximum and minimum number of permutations.
+In this method, you can enter maximum' 6 'in the maximum permutation section.)
+And please, write words for each line in your wordlist
+
+
+
+Besides all these, you can see which version you are using by typing the' -v 'command.
