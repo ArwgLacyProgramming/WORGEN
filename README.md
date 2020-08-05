@@ -17,4 +17,4 @@ After you run  "python3 WORGEN.py":
 
 -u           --use ==========> Use to start program.
 
--w FILENAME        ==========> Use to import your wordlist. 
+-w                 ==========> Use to import your wordlist. 
