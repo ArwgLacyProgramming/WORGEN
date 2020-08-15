@@ -323,7 +323,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
     #Merging and Subtracting Files
     if permi == 1:
         import os
-        os.rename("outold.txt","output.txt")
+        os.rename('outold.txt','output.txt')
     elif perti == 2:
         with open("outold.txt",'r') as f:
             d=set(f.readlines())
