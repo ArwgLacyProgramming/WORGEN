@@ -1,8 +1,8 @@
 print("- \n      ---       ---           PPPPPP   RRRRRR    EEEEEEEE  SSSSSSS   EEEEEEEE  NNN     NN  TTTTTTTTTT  SSSSSSS\n    --- ---     ---           PP   PP  RR   RR   EE        SS   SSS  EE        NN NN   NN      TT      SS   SSS\n   ---   ---    ---           PPPPPP   RRRRRR    EEEEEEEE  SSS       EEEEEEEE  NN  NN  NN      TT      SSS\n  -----------   ---           PP       RRRR      EE           SSS    EE        NN   NN NN      TT         SSS\n ---       ---  ----------    PP       RR  RR    EE        SS   SS   EE        NN    NNNN      TT      SS   SS\n---         --- ----------    PP       RR   RRR  EEEEEEEE  SSSSSSS   EEEEEEEE  NN     NNN      TT      SSSSSSS\n \n")
-starting = input(" -h         --help ==========>Shows how to use. \n -v      --version ==========> Shows software version. \n -w                ==========> Use to import your wordlist. \n -u          --use ==========> Use to start program. \n \n Enter your option: \n ").strip()
+starting = input(" -h                  --help ==========> Shows how to use. \n -v               --version ==========> Shows software version. \n -w       --wordlist_import ==========> Use to import your wordlist. \n -u                   --use ==========> Use to start program. \n -e                  --exit ==========> Use to exit WORGEN \n\n Enter your option: \n ").strip()
 while starting != 'u' and starting != '-u' and starting != 'U' and starting != '-U' and starting != 'h' and starting != '-h' and starting != 'H' and starting != '-H' and starting != 'v' and starting != '-v' and starting != 'V' and starting != '-V' and starting != "w" and starting != "-w" and starting != "W"  and starting != "-W" and starting != "e" and starting != "-e" and starting != "E" and starting != "-E":
     print("\n______________________________________________________\n______________YOU MUST SELECT AN OPTION!______________\n-------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
-    starting = input(" -h         --help ==========>Shows how to use. \n -v      --version ==========> Shows software version. \n -w                ==========> Use to import your wordlist. \n -u          --use ==========> Use to start program. \n \n Enter your option: \n ").strip()
+    starting = input(" -h                  --help ==========> Shows how to use. \n -v               --version ==========> Shows software version. \n -w       --wordlist_import ==========> Use to import your wordlist. \n -u                   --use ==========> Use to start program. \n -e                  --exit ==========> Use to exit WORGEN \n\n Enter your option: \n ").strip()
 #Standart Use Section
 if starting == "-u" or starting == "u" or starting=="-U" or starting == "U":
      filename= (input("File Name: ").strip()) + ".txt"
@@ -321,9 +321,9 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                  for line in infile:
                      outfile.write(line)   
     #Merging and Subtracting Files
-    if permi == 1:
-        import os
-        os.rename('outold.txt','output.txt')
+    if perti == 1:
+        import shutil
+        shutil.move('outold.txt', 'output.txt')
     elif perti == 2:
         with open("outold.txt",'r') as f:
             d=set(f.readlines())
@@ -333,6 +333,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
         with open('output.txt','a') as f:
             for line in list(d-e):
                f.write(line)
+        os.remove("outold.txt")
     elif perti == 3:
         filenames = [starst, "twice.txt"]
         with open('sub.txt', 'w') as outfile:
@@ -340,6 +341,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                 with open(fname) as infile:
                     for line in infile:
                         outfile.write(line)
+        os.remove("outold.txt")
     elif perti == 4:
         filenames = [starst, "twice.txt", "threet.txt"]
         with open('sub.txt', 'w') as outfile:
@@ -347,6 +349,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                 with open(fname) as infile:
                     for line in infile:
                         outfile.write(line)
+        os.remove("outold.txt")
     elif perti == 5:
         filenames = [starst, "twice.txt", "threet", "fourt"]
         with open('sub.txt', 'w') as outfile:
@@ -354,6 +357,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                 with open(fname) as infile:
                     for line in infile:
                         outfile.write(line)
+        os.remove("outold.txt")
     if perti != 2 and perti != 1:
         with open("outold.txt",'r') as f:
             d=set(f.readlines())
@@ -365,17 +369,11 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                f.write(line)
         import os
         os.remove("sub.txt")
+        os.remove("outold.txt")
     with open("output.txt") as result:
-             uniqlines = set(result.readlines())
-             with open("output.txt", 'w') as rmdup:
-                 rmdup.writelines(set(uniqlines))
-                 print("Successful.")
-
-                 count=0
-    with open("output.txt", 'r') as f:
-        for line in f:
-            count += 1
-    print("Total Lines:", count)
+         uniqlines = set(result.readlines())
+         with open("output.txt", 'w') as rmdup:
+             rmdup.writelines(set(uniqlines))
     #Removing Unnecessary Files
     import os
     os.remove("twice.txt")
@@ -383,10 +381,15 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
     os.remove("fourt.txt")
     os.remove("fivet.txt")
     os.remove("sixt.txt")
-    os.remove("outold.txt")
     os.remove(starst2)
     import time
-    import os   
+    import os  
+    with open("output.txt",) as f:
+        with open ("out.txt", "wt") as q:
+            q.writelines("".join(line for line in f if not line.isspace()))
+    import os 
+    os.remove("output.txt")
+    os.rename("out.txt","output.txt") 
     printquestion= input("Do you want to display print?(Y or N):").strip()  
     while printquestion != "y" and printquestion != "Y" and printquestion != "n" and printquestion != "N" :
          print("You must enter a valid value!!!")
@@ -397,11 +400,10 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
              print("You must enter a valid value!!!")
              hyperq= input ("Do you want to print at hyperspeed?(Y or N):")
          if hyperq == "Y" or hyperq == "y":
-             f
-             with open(filename, "r+") as wlist:
+             with open("output.txt", "r+") as wlist:
                       data = wlist.readlines()
                       for line in data:
-                           print("\033[1;32m[" + filename + "] \033[1;33m" + line)
+                           print("\033[1;32m[" + "output.txt" + "] \033[1;33m" + line)
                            time.sleep(00000.09)
                            if os.name == "posix":
                                os.system("clear")
@@ -414,12 +416,12 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                      liner= os.linesep.join([s for s in line.splitlines() if s])
                      print(liner)
                      time.sleep(0.03)   
-         print("Successful.")   
-         with open("output.txt", 'r') as f:
-             count=0
-             for line in f:
-                 count += 1
-                 print("Total Lines:", count)
+    print("Successful.")   
+    with open("output.txt", 'r') as f:
+         count=0
+         for line in f:
+             count += 1
+         print("Total Lines:", count)
 #Exit Section
 if starting == "e" or starting == "-e" or starting == "E" or starting == "-E":
     raise SystemExit()
