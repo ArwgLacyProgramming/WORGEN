@@ -17,6 +17,6 @@ After you run  "python3 WORGEN.py":
 
 -u                            --use ==========> Use to start program.
 
--w                --wordlist_import ==========> Use to import your wordlist. 
+-w                                       --wordlist_import ==========> Use to import your wordlist. 
 
 -e                           --exit ==========> Use to exit WORGEN
