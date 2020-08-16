@@ -13,10 +13,10 @@ After you run  "python3 WORGEN.py":
 
 -h                                      --help  ==========> Shows how to use. 
 
--v                        --version ==========> Shows software version. 
+-v                                    --version ==========> Shows software version. 
 
--u                            --use ==========> Use to start program.
+-u                                        --use ==========> Use to start program.
 
--w                                       --wordlist_import ==========> Use to import your wordlist. 
+-w                            --wordlist_import ==========> Use to import your wordlist. 
 
--e                           --exit ==========> Use to exit WORGEN
+-e                                       --exit ==========> Use to exit WORGEN
