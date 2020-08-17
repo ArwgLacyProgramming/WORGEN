@@ -333,6 +333,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
         with open('output.txt','a') as f:
             for line in list(d-e):
                f.write(line)
+        import os
         os.remove("outold.txt")
     elif perti == 3:
         filenames = [starst, "twice.txt"]
@@ -341,6 +342,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                 with open(fname) as infile:
                     for line in infile:
                         outfile.write(line)
+        import os
         os.remove("outold.txt")
     elif perti == 4:
         filenames = [starst, "twice.txt", "threet.txt"]
@@ -349,6 +351,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                 with open(fname) as infile:
                     for line in infile:
                         outfile.write(line)
+        import os
         os.remove("outold.txt")
     elif perti == 5:
         filenames = [starst, "twice.txt", "threet", "fourt"]
@@ -357,6 +360,7 @@ elif "-w" in starting or "w" in starting or "-W" in starting or "W" in starting:
                 with open(fname) as infile:
                     for line in infile:
                         outfile.write(line)
+        import os
         os.remove("outold.txt")
     if perti != 2 and perti != 1:
         with open("outold.txt",'r') as f:
